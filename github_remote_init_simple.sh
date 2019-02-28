@@ -14,7 +14,7 @@ vi README.md
 
 # I'm not sure double quote in JSON POST data won't cause any error.
 curl -u inoue-katsumi https://api.github.com/user/repos -d \
-	"{\"name\":\"$repo_name\",\"description\":\"$(printf "%s" $(sed -n '3p' README.md|sed "s/['\]//g"))\"}"
+	"{\"name\":\"$repo_name\",\"description\":\"$(printf "%s " $(sed -n '3p' README.md|sed "s/['\]//g"))\"}"
 git init
 git remote add origin https://inoue-katsumi@github.com/inoue-katsumi/$repo_name
 git add *
